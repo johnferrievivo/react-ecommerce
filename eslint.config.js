@@ -19,7 +19,7 @@ export default defineConfig([
         },
         rules: {
             'react-refresh/only-export-components': [
-                'warn',
+                'off',
                 { allowConstantExport: true },
             ],
             'no-empty': 'warn',
