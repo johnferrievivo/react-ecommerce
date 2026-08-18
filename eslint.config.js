@@ -23,7 +23,7 @@ export default defineConfig([
                 { allowConstantExport: true },
             ],
             'no-empty': 'warn',
-            'no-undef': 'warn',
+            'no-undef': 'error',
             'no-unused-vars': 'warn',
             'react/prop-types': 'off',
             'react/react-in-jsx-scope': 'off',
