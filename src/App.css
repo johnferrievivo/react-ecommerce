@@ -531,3 +531,8 @@ body {
         align-items: flex-start;
     }
 }
+
+/* Extras */
+span.auth-link {
+    cursor: pointer;
+}
