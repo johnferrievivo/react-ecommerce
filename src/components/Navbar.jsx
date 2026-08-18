@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 
 export default function Navbar() {
-    const { logout } = useContext(AuthContext);
+    const { user, logout } = useContext(AuthContext);
 
     return (
         <nav className="navbar">
@@ -20,17 +20,29 @@ export default function Navbar() {
                     </Link>
                 </div>
                 <div className="navbar-auth">
-                    <div className="navbar-auth-links">
-                        <Link to="/auth" className="btn btn-secondary">
-                            Login
-                        </Link>
-                        <Link to="/auth" className="btn btn-primary">
-                            Sign Up
-                        </Link>
-                        <button className="btn btn-primary" onClick={logout}>
-                            Logout
-                        </button>
-                    </div>
+                    {!user ? (
+                        <div className="navbar-auth-links">
+                            <Link to="/auth" className="btn btn-secondary">
+                                Login
+                            </Link>
+                            <Link to="/auth" className="btn btn-primary">
+                                Sign Up
+                            </Link>
+                        </div>
+                    ) : (
+                        <div className="navbar-user">
+                            <span className="navbar-greeting">
+                                Hello, {user.email}
+                            </span>
+
+                            <button
+                                className="btn btn-primary"
+                                onClick={logout}
+                            >
+                                Logout
+                            </button>
+                        </div>
+                    )}
                 </div>
             </div>
         </nav>

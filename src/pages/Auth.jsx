@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 export default function Auth() {
     const [mode, setMode] = useState('signup');
     const [error, setError] = useState(null);
-    const { signUp, user, login } = useContext(AuthContext);
+    const { signUp, login } = useContext(AuthContext);
 
     const navigate = useNavigate();
 
@@ -36,7 +36,6 @@ export default function Auth() {
         <div className="page">
             <div className="container">
                 <div className="auth-container">
-                    {user && <p>User logged in: {user.email}</p>}
                     <h1 className="page-title">
                         {mode === 'signup' ? 'Sign Up' : 'Login'}
                     </h1>
