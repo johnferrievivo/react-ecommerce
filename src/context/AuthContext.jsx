@@ -26,7 +26,7 @@ export default function AuthProvider({ children }) {
     }
 
     function login(user) {
-        const users = JSON.parse(localStorage.getItem('users'));
+        const users = JSON.parse(localStorage.getItem('users')) || [];
         const userExists = users.find(
             (u) => user.email == u.email && user.password === u.password,
         );
