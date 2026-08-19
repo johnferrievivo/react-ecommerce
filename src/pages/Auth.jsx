@@ -39,7 +39,10 @@ export default function Auth() {
                     <h1 className="page-title">
                         {mode === 'signup' ? 'Sign Up' : 'Login'}
                     </h1>
-                    <form action={handleSubmit(onSubmit)} className="auth-form">
+                    <form
+                        onSubmit={handleSubmit(onSubmit)}
+                        className="auth-form"
+                    >
                         {error && <div className="error-message">{error}</div>}
                         <div className="form-group">
                             <label htmlFor="email" className="form-label">
